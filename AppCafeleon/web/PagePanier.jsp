@@ -7,27 +7,60 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <%@ include file="PageMenu.jsp" %>
-        <h1>Panier</h1>
-        
-        
-        
-        <form>
-            <legend>votre nom : </legend>
-            <input type="text" value="" name="nom" >
-            <legend> votre prénom </legend>
-            <input type="text" name="prenom">
-            <legend> votre adresse mail </legend>
-            <input type="email" name="email">
-            <input type="submit" value="Commander">
-            
-            
-        
-        </form>
-    </body>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Page Accueil</title>
+</head>
+	
+<%@ include file="header.jsp" %>
+<body>
+
+	<div class="Titre-Commande"><h1>Votre commande <i>:</i></h1></div>
+
+	<main>
+	<div class="commande">
+	
+		<!-- TODO foreach produits in panier, image et quantité -->
+		
+		<!-- TODO end -->
+		
+		
+		<h1>Coordonnées</h1>
+		<div class="coord">
+			<form>
+				<div class="group">      
+			  <input type="text" required>
+			  <span class="highlight"></span>
+			  <span class="bar"></span>
+			  <label>Nom</label>
+				</div>
+
+				<div class="group">      
+			  <input type="text" required>
+			  <span class="highlight"></span>
+			  <span class="bar"></span>
+			  <label>Téléphone</label>
+				</div>
+
+				<div class="group">      
+			  <input type="text" required>
+			  <span class="highlight"></span>
+			  <span class="bar"></span>
+			  <label>Adresse</label>
+				</div>
+
+				<div class="Bouton-Ajouter">
+				<input type="submit" value="PAYE !!!">
+				<svg height="150" width="150">
+				<circle cx="75" cy="75" r="60" />
+				</svg></a>
+				</div>
+
+			</form>
+		</div>
+	</div>
+	</main>
+
+</body>
+<%@ include file="footer.jsp" %>
 </html>
