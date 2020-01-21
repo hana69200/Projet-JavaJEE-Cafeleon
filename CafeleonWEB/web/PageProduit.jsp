@@ -16,29 +16,29 @@
 	<div class="Nos-Cafes"><h1>Savourez nos Cafés <i>!</i></h1></div>
 
 	<main>
-            <% 
+            <%! 
                 Connect conn = new Connect();
                 ProduitDAO pDAO= new ProduitDAO(conn);
-                ArrayList<Produit> listeProduit=pDAO.getProduit();
-                for(Produit p : listeProduit)
+                ArrayList<Produit> listeProduit=pDAO.getProduit();%>
+                <%for(Produit p : listeProduit)
                 {
             %>
 	<!-- TODO loop for each product in Products -->
 		<div class="cafeItem">
 			<div class="Titre-cafeItem">
 				<!-- TODO get Intitule -->
-				<h1 id="Nom-Suedois"> <%p.getIntitule();%> </h1>
+				<h1 id="Nom-Suedois"> <%=p.getIntitule()%> </h1>
 			</div>
 			<div class="Display-Cafe-Texte">
 				<!-- TODO src = getTitre.png -->
-				<img src="<%p.getIntitule();%>.png" alt="Café">
+				<img src="style/images/<%=p.getIntitule()%>.png" alt="Café">
 				<div class="Texte">
 						<!-- TODO get saveur -->
-					<p><% p.getSaveur(); %></p>
+					<p><%= p.getSaveur()%></p>
 					<p>Miam !</p>
 					<form>
 						<!-- getID -->
-					<input type="hidden" value="<% p.getIdProduit();%>">
+					<input type="hidden" value="<%= p.getIdProduit()%>">
 					</form>
 
 					<!-- SUBMIT -->
